@@ -58,7 +58,7 @@ class GameFragment : Fragment() {
         updateNextWordOnScreen()
         binding.score.text = getString(R.string.score, 0)
         binding.wordCount.text = getString(
-                R.string.word_count, 0, MAX_NO_OF_WORDS)
+                R.string.word_count, viewModel.currentWordCount, MAX_NO_OF_WORDS)
     }
 
     private fun onSubmitWord() {

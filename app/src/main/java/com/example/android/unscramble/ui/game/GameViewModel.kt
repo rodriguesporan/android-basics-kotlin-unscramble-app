@@ -23,15 +23,8 @@ class GameViewModel: ViewModel() {
     private fun getNextWord() {
         currentWord = allWordsList.random()
         val tempWord: MutableList<Char> = currentWord.toMutableList()
-        /*tempWord.shuffle()
-
-        while (tempWord.toString().equals(currentWord, false)) {
-            tempWord.shuffle()
-        }*/
-
-        do {
-            tempWord.shuffle()
-        } while (tempWord.toString().equals(currentWord, false))
+        do tempWord.shuffle()
+        while (tempWord.toString().equals(currentWord, false))
 
         if (wordsList.contains(currentWord)) {
             getNextWord()
